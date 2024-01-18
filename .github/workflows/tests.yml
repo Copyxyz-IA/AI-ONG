@@ -97,7 +97,7 @@ jobs:
       - name: Install Haystack and the dependencies needed for tests
         run: pip install -r test/test_requirements.txt
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: ${{ env.pythonLocation }}
           key: pip-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -121,7 +121,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Restore Python dependencies
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.pythonLocation }}
           key: pip-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -182,7 +182,7 @@ jobs:
           sudo apt install ffmpeg  # for local Whisper tests
 
       - name: Restore Python dependencies
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.pythonLocation }}
           key: pip-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -240,7 +240,7 @@ jobs:
           brew install ffmpeg  # for local Whisper tests
 
       - name: Restore Python dependencies
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.pythonLocation }}
           key: pip-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
@@ -291,7 +291,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Restore Python dependencies
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.pythonLocation }}
           key: pip-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
